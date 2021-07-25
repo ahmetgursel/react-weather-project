@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Col, Form } from 'react-bootstrap';
 import stateList from '../../assets/stateList.json';
-import { useOpenWeatherApi } from '../../context/OpenWeatherApiContext';
+import { UseOpenWeatherApi } from '../../context/OpenWeatherApiContext';
 
 function SelectHeader() {
-  const { setState } = useOpenWeatherApi();
+  const { setState } = UseOpenWeatherApi();
 
   const cityOptions = stateList.map((item, index) => (
     <option value={JSON.stringify(item)} key={index}>
