@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SelectHeader from './components/SelectCity';
+import WeatherCardsContainer from './container/WeatherCardsContainer/';
+import { OpenWeatherApiProvider } from './context/OpenWeatherApiContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <OpenWeatherApiProvider>
+        <SelectHeader></SelectHeader>
+        <WeatherCardsContainer></WeatherCardsContainer>
+      </OpenWeatherApiProvider>
     </div>
   );
 }
